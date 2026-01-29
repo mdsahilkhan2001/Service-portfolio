@@ -1,0 +1,205 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Light Mode Variables - Emerald Theme */
+  --color-primary: #10b981;
+  /* Emerald 500 */
+  --color-primary-dark: #059669;
+  /* Emerald 600 */
+  --color-secondary: #14b8a6;
+  /* Teal 500 */
+  --color-accent: #34d399;
+  /* Emerald 400 */
+
+  --color-bg: #ffffff;
+  --color-bg-secondary: #f0fdf4;
+  /* Emerald 50 (Very light green tint) */
+  --color-text: #064e3b;
+  /* Emerald 900 */
+  --color-text-secondary: #334155;
+  /* Slate 700 */
+
+  --color-border: #d1fae5;
+  /* Emerald 100 */
+
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --max-width: 1280px;
+}
+
+[data-theme='dark'] {
+  /* Dark Mode Variables - Deep Dark + Emerald */
+  --color-primary: #10b981;
+  /* Emerald 500 */
+  --color-primary-dark: #059669;
+  /* Emerald 600 */
+  --color-secondary: #2dd4bf;
+  /* Teal 400 */
+  --color-accent: #6ee7b7;
+  /* Emerald 300 */
+
+  --color-bg: #020617;
+  /* Slate 950 (Deep Dark) */
+  --color-bg-secondary: #0f172a;
+  /* Slate 900 */
+  --color-text: #f0fdf4;
+  /* Emerald 50 */
+  --color-text-secondary: #cbd5e1;
+  /* Slate 300 */
+
+  --color-border: #1e293b;
+  /* Slate 800 */
+
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.4), 0 2px 4px -2px rgb(0 0 0 / 0.3);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.5), 0 4px 6px -4px rgb(0 0 0 / 0.4);
+}
+
+/* react-phone-input-2 Dark Mode Overrides */
+[data-theme='dark'] .react-tel-input .country-list {
+  background-color: var(--color-bg-secondary) !important;
+  color: var(--color-text) !important;
+  border: 1px solid var(--color-border) !important;
+}
+
+[data-theme='dark'] .react-tel-input .country-list .search {
+  background-color: var(--color-bg-secondary) !important;
+  color: var(--color-text) !important;
+  border-bottom: 1px solid var(--color-border) !important;
+}
+
+[data-theme='dark'] .react-tel-input .country-list .search-box {
+  background-color: var(--color-bg) !important;
+  color: var(--color-text) !important;
+  border: 1px solid var(--color-border) !important;
+}
+
+[data-theme='dark'] .react-tel-input .country-list .country:hover {
+  background-color: var(--color-bg) !important;
+}
+
+[data-theme='dark'] .react-tel-input .country-list .country.highlight {
+  background-color: var(--color-primary) !important;
+  color: white !important;
+}
+
+[data-theme='dark'] .react-tel-input .selected-flag:hover,
+[data-theme='dark'] .react-tel-input .selected-flag.open {
+  background-color: var(--color-bg-secondary) !important;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.5;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-family: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Animations Helper Classes */
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-text-secondary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary);
+}
+
+/* High-Tech Animation Utilities */
+.mask-text {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  display: inline-block;
+}
+
+.glass-glow {
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-glow::before {
+  content: "";
+  position: absolute;
+  top: var(--mouse-y, 50%);
+  left: var(--mouse-x, 50%);
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, var(--color-primary) 0%, transparent 70%);
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 1;
+  filter: blur(50px);
+}
+
+.glass-glow:hover::before {
+  opacity: 0.15;
+}
+
+.tech-grid {
+  background-image: radial-gradient(var(--color-primary) 1px, transparent 1px);
+  background-size: 30px 30px;
+  opacity: 0.05;
+}
+
+.magnetic-wrap {
+  display: inline-block;
+  transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
