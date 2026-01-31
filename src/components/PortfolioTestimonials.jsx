@@ -10,8 +10,8 @@ const PortfolioTestimonials = ({ testimonials }) => {
                     <div className="h-1 w-12 bg-primary rounded-full shadow-[0_0_10px_rgba(var(--color-primary-rgb),0.5)]" />
                     <span className="text-primary font-bold uppercase tracking-[0.3em] text-xs">Testimonials</span>
                 </div>
-                <h2 className="text-3xl md:text-4xl font-extrabold text-white tracking-tighter">
-                    Client <span className="text-secondary italic">Words</span>
+                <h2 className="text-3xl md:text-4xl font-extrabold text-text tracking-tighter">
+                    Client <span className="text-secondary">Words</span>
                 </h2>
             </div>
 

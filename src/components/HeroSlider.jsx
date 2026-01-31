@@ -154,8 +154,8 @@ const HeroSlider = () => {
                             aria-label={`Go to slide ${index + 1}`}
                         >
                             <div className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentIndex
-                                    ? 'bg-primary w-8 shadow-lg shadow-primary/50'
-                                    : 'bg-white/50 hover:bg-white/80 group-hover:scale-125'
+                                ? 'bg-primary w-8 shadow-lg shadow-primary/50'
+                                : 'bg-white/50 hover:bg-white/80 group-hover:scale-125'
                                 }`} />
                         </button>
                     ))}
