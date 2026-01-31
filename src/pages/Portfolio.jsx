@@ -1,5 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import PortfolioTestimonials from '../components/PortfolioTestimonials';
+
+const testimonials = [
+    { text: "Their engineering team delivered our ERP platform ahead of schedule with outstanding quality.", author: "Prime Apparel Exporter, Wholesale Garments Manufacturer" },
+    { text: "Highly reliable partner for AI and cloud-based product development.", author: "Product Head, SaaS Startup" },
+    { text: "We modernized our legacy systems seamlessly with G2S Technologies.", author: "Director of IT, FinTech Firm" },
+];
 
 const projects = [
     {
@@ -30,8 +37,8 @@ const Portfolio = () => {
             <section className="py-24 relative">
                 <div className="container mx-auto px-4 max-w-7xl">
                     <div className="text-center mb-16">
-                        <h2 className="text-4xl font-extrabold mb-4 text-text">Case Studies</h2>
-                        <p className="text-xl text-theme-text-secondary max-w-2xl mx-auto">Explore our recent work and success stories.</p>
+                        <h2 className="text-4xl font-extrabold mb-4 text-text">Our Work</h2>
+                        <p className="text-xl text-theme-text-secondary max-w-2xl mx-auto">Explore our recent projects and success stories.</p>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -53,6 +60,9 @@ const Portfolio = () => {
                     </div>
                 </div>
             </section>
+
+            {/* Testimonials Marquee */}
+            <PortfolioTestimonials testimonials={testimonials} />
         </div>
     );
 };
