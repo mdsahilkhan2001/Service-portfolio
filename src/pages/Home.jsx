@@ -469,29 +469,67 @@ const Home = () => {
                         <p className="text-slate-400 text-xl max-w-2xl mx-auto">More than just a service provider—we are your strategic growth partner.</p>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                        {[
-                            { icon: Users, val: '1800+', label: 'Strong Workforce' },
-                            { icon: Globe, val: '250+', label: 'Active Customers' },
-                            { icon: ShieldCheck, val: '5+ Years', label: 'Industry Experience' },
-                            { icon: Zap, val: 'Agile', label: 'DevOps Driven' }
-                        ].map((stat, index) => (
-                            <motion.div
-                                key={index}
-                                className="p-8 bg-white/5 backdrop-blur-md rounded-3xl border border-white/10 hover:border-primary/50 transition-all duration-300 group"
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: index * 0.1 }}
-                                whileHover={{ scale: 1.02 }}
-                            >
-                                <div className="mb-6 inline-block p-3 bg-white/5 rounded-xl group-hover:bg-primary/20 transition-colors">
-                                    <stat.icon size={32} className="text-primary" />
-                                </div>
-                                <h3 className="text-4xl font-extrabold mb-2 text-white tracking-tight">{stat.val}</h3>
-                                <p className="text-slate-400 font-medium">{stat.label}</p>
-                            </motion.div>
-                        ))}
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                        {/* Image Section */}
+                        <motion.div
+                            initial={{ opacity: 0, x: -50 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8 }}
+                            className="relative"
+                        >
+                            <div className="relative rounded-3xl overflow-hidden border border-white/10 bg-gradient-to-br from-primary/10 to-transparent p-1">
+                                <img
+                                    src="/assets/why-partner.png"
+                                    alt="Why Partner With Us - 24/7 Support, Security, Growth"
+                                    className="w-full h-auto rounded-3xl"
+                                />
+                                {/* Glow effect */}
+                                <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 via-transparent to-secondary/20 pointer-events-none"></div>
+                            </div>
+                        </motion.div>
+
+                        {/* Feature Cards */}
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            {[
+                                {
+                                    icon: ShieldCheck,
+                                    title: 'Enterprise Security',
+                                    desc: 'Bank-grade security protocols to protect your data and ensure compliance with industry standards.'
+                                },
+                                {
+                                    icon: Zap,
+                                    title: '24/7 Support',
+                                    desc: 'Round-the-clock technical assistance from our expert team whenever you need it.'
+                                },
+                                {
+                                    icon: Users,
+                                    title: 'Expert Team',
+                                    desc: 'Dedicated professionals with deep expertise in cutting-edge technologies and best practices.'
+                                },
+                                {
+                                    icon: Globe,
+                                    title: 'Scalable Solutions',
+                                    desc: 'Future-proof architecture that grows with your business needs and adapts to market changes.'
+                                }
+                            ].map((feature, index) => (
+                                <motion.div
+                                    key={index}
+                                    className="p-6 bg-white/5 backdrop-blur-md rounded-3xl border border-white/10 hover:border-primary/50 transition-all duration-300 group"
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: index * 0.1 }}
+                                    whileHover={{ scale: 1.02 }}
+                                >
+                                    <div className="mb-4 inline-block p-3 bg-white/5 rounded-xl group-hover:bg-primary/20 transition-colors">
+                                        <feature.icon size={28} className="text-primary" />
+                                    </div>
+                                    <h3 className="text-xl font-bold mb-2 text-white">{feature.title}</h3>
+                                    <p className="text-slate-400 text-sm leading-relaxed">{feature.desc}</p>
+                                </motion.div>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </section>
