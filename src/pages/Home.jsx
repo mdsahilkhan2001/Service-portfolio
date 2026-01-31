@@ -559,8 +559,8 @@ const Home = () => {
                         {/* Background Image with Overlays */}
                         <div className="absolute inset-0 z-0 group">
                             <img
-                                src="/assets/cta-illustration.png"
-                                alt="Background"
+                                src="/assets/cta-bg-new.jpg"
+                                alt="Accelerate Your Software Legacy"
                                 className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
                             />
                             {/* Dark Overlays for legibility */}

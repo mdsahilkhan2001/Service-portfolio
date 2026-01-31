@@ -11,7 +11,17 @@ const Footer = () => {
 
                     {/* Company Info */}
                     <div className="footer-section">
-                        <h3 className="text-2xl font-bold text-primary mb-4 block">G2S<span className="text-text">Technologies</span></h3>
+                        <div className="flex items-center gap-3 mb-4">
+                            <img
+                                src="/assets/sgs-icon.png"
+                                alt="SGS Codeworks"
+                                className="h-10 w-10 object-contain mix-blend-screen"
+                            />
+                            <div className="flex items-center gap-2">
+                                <span className="text-2xl font-bold text-white tracking-tight">SGS</span>
+                                <span className="text-lg font-light text-slate-300">Codeworks</span>
+                            </div>
+                        </div>
                         <p className="text-theme-text-secondary mb-6 leading-relaxed">
                             Accelerating digital transformation with scalable software solutions. We build modern web apps, AI-powered systems, and cloud-native software.
                         </p>
@@ -49,7 +59,7 @@ const Footer = () => {
                         <h4 className="text-lg font-semibold text-text mb-5">Contact Us</h4>
                         <div className="flex items-center gap-3 text-theme-text-secondary mb-4">
                             <Mail size={18} className="text-primary" />
-                            <span>mdsahilkhan2001@gmail.com</span>
+                            <a href="mailto:mdsahilkhan2001@gmail.com" className="hover:text-primary transition-colors cursor-pointer">mdsahilkhan2001@gmail.com</a>
                         </div>
                         <div className="flex items-center gap-3 text-theme-text-secondary mb-4">
                             <Phone size={18} className="text-primary" />
@@ -70,7 +80,7 @@ const Footer = () => {
                 </div>
 
                 <div className="border-t border-border pt-8 text-center text-theme-text-secondary text-sm">
-                    <p>&copy; {new Date().getFullYear()} G2S Technologies. All rights reserved.</p>
+                    <p>&copy; {new Date().getFullYear()} SGS Codeworks. All rights reserved.</p>
                 </div>
             </div>
         </footer>
