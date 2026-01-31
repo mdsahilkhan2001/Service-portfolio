@@ -172,6 +172,7 @@ const maskVariants = {
 };
 
 import HeroSlider from '../components/HeroSlider';
+import TestimonialCarousel from '../components/TestimonialCarousel';
 
 const Home = () => {
     const [activeTab, setActiveTab] = useState('Frontend');
@@ -535,83 +536,71 @@ const Home = () => {
             </section>
 
             {/* Testimonials */}
-            <section className="py-32 relative">
+            <section className="py-24 relative overflow-hidden">
                 <div className="container mx-auto px-4 max-w-7xl">
-                    <div className="text-center mb-20">
-                        <h2 className="text-4xl md:text-5xl font-extrabold mb-6 text-text">Client <span className="text-secondary">Success Stories</span></h2>
-                        <p className="text-xl text-theme-text-secondary max-w-2xl mx-auto">Don't just take our word for it. Here's what our partners say.</p>
+                    <div className="text-center mb-12 md:mb-16">
+                        <h2 className="text-4xl md:text-5xl font-extrabold mb-4 text-text tracking-tight">Client <span className="text-secondary">Success Stories</span></h2>
+                        <p className="text-lg md:text-xl text-theme-text-secondary max-w-2xl mx-auto opacity-80">Don't just take our word for it. Here's what our partners say.</p>
                     </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {testimonials.map((t, index) => (
-                            <motion.div
-                                key={index}
-                                className="bg-theme-bg-secondary p-10 rounded-[2rem] border border-border relative group hover:bg-white dark:hover:bg-slate-800 transition-colors duration-300 shadow-sm hover:shadow-lg"
-                                initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.5 }}
-                            >
-                                <div className="absolute top-8 right-8 text-primary/20 group-hover:text-primary/40 transition-colors">
-                                    <MessageSquare size={48} />
-                                </div>
-                                <div className="relative z-10">
-                                    <div className="flex gap-1 mb-6">
-                                        {[1, 2, 3, 4, 5].map(star => (
-                                            <span key={star} className="text-yellow-400">★</span>
-                                        ))}
-                                    </div>
-                                    <p className="text-lg text-text mb-8 leading-relaxed font-medium">"{t.text}"</p>
-                                    <div className="flex items-center gap-4">
-                                        <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-bold text-sm">
-                                            {t.author[0]}
-                                        </div>
-                                        <div>
-                                            <p className="font-bold text-text text-sm">{t.author.split(',')[0]}</p>
-                                            <p className="text-xs text-theme-text-secondary uppercase tracking-wide">{t.author.split(',')[1]}</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </motion.div>
-                        ))}
-                    </div>
+                    <TestimonialCarousel testimonials={testimonials} />
                 </div>
             </section>
 
             {/* CTA Section */}
-            <section className="py-24 px-4 bg-theme-bg">
-                <motion.div
-                    className="max-w-6xl mx-auto relative rounded-[3rem] overflow-hidden text-center shadow-2xl"
-                    initial={{ opacity: 0, y: 40 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6 }}
-                >
-                    <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-emerald-900 to-slate-900 z-0"></div>
-                    <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 z-0 mix-blend-overlay"></div>
-                    <div className="absolute -top-[50%] -left-[20%] w-[100%] h-[100%] bg-primary/20 blur-[100px] rounded-full pointer-events-none animate-pulse-slow"></div>
+            <section className="py-24 px-4 bg-theme-bg overflow-hidden">
+                <div className="max-w-7xl mx-auto">
+                    <motion.div
+                        className="relative rounded-[4rem] overflow-hidden bg-[#0B1221] border border-white/5 shadow-2xl min-h-[500px] flex items-center justify-center p-8 md:p-20 text-center"
+                        initial={{ opacity: 0, y: 60 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8, ease: "easeOut" }}
+                    >
+                        {/* Background Image with Overlays */}
+                        <div className="absolute inset-0 z-0 group">
+                            <img
+                                src="/assets/cta-illustration.png"
+                                alt="Background"
+                                className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                            />
+                            {/* Dark Overlays for legibility */}
+                            <div className="absolute inset-0 bg-[#0B1221]/70" />
+                            <div className="absolute inset-0 bg-gradient-to-t from-[#0B1221] via-transparent to-[#0B1221]/50" />
+                        </div>
 
-                    <div className="relative z-10 py-24 px-8 md:px-20">
-                        <h2 className="text-4xl md:text-5xl font-extrabold mb-8 text-white tracking-tight">Ready to Accelerate Software Development?</h2>
-                        <p className="text-xl md:text-2xl mb-12 text-slate-200 max-w-2xl mx-auto leading-relaxed">Avoid talent gaps. Tap into the top 1% of engineers and build your dream product today.</p>
+                        {/* Content */}
+                        <div className="relative z-10 max-w-3xl">
+                            <motion.div
+                                initial={{ opacity: 0, scale: 0.9 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
+                                transition={{ delay: 0.2, duration: 0.6 }}
+                            >
+                                <div className="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-primary/20 border border-primary/30 text-white text-xs md:text-sm font-bold mb-8 uppercase tracking-[0.2em] backdrop-blur-md">
+                                    <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+                                    Ready to scale?
+                                </div>
+                                <h2 className="text-4xl md:text-4xl font-extrabold text-white mb-8 leading-[1.1] tracking-tighter">
+                                    Accelerate Your <br />
+                                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-emerald-400 to-secondary">
+                                        Software Legacy
+                                    </span>
+                                </h2>
+                                <p className="text-lg md:text-xl text-slate-200 mb-12 leading-relaxed opacity-90">
+                                    Bridge the gap between vision and execution. Partner with the top 1% of global engineering talent to build software that defines industries.
+                                </p>
 
-                        <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                            <div className="magnetic-wrap">
-                                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                                    <Link to="/contact" className="px-10 py-5 bg-white text-emerald-900 text-lg rounded-full font-bold shadow-lg hover:shadow-xl transition-all block">
-                                        Book a Discovery Call
+                                <div className="flex flex-col sm:flex-row gap-6 justify-center">
+                                    <Link to="/contact" className="px-10 py-5 bg-gradient-to-r from-primary to-emerald-600 text-white text-lg rounded-2xl font-bold shadow-2xl shadow-primary/30 hover:shadow-primary/50 hover:-translate-y-1 transition-all">
+                                        Book Discovery Call
                                     </Link>
-                                </motion.div>
-                            </div>
-                            <div className="magnetic-wrap">
-                                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                                    <Link to="/contact" className="px-10 py-5 bg-emerald-800/30 backdrop-blur-md border border-emerald-500/30 text-white text-lg rounded-full font-bold hover:bg-emerald-800/50 hover:border-emerald-500 transition-all block">
+                                    <Link to="/contact" className="px-10 py-5 bg-white/10 backdrop-blur-xl border border-white/20 text-white text-lg rounded-2xl font-bold hover:bg-white/20 transition-all">
                                         Contact Us
                                     </Link>
-                                </motion.div>
-                            </div>
+                                </div>
+                            </motion.div>
                         </div>
-                    </div>
-                </motion.div>
+                    </motion.div>
+                </div>
             </section>
         </div>
     );
