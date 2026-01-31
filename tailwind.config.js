@@ -14,11 +14,23 @@ export default {
                 },
                 secondary: '#14b8a6', // teal-500
                 accent: '#34d399',    // emerald-400
+                'theme-bg': {
+                    DEFAULT: 'var(--color-bg)',
+                    main: 'var(--color-bg)',
+                    secondary: 'var(--color-bg-secondary)',
+                },
+                'theme-text': {
+                    DEFAULT: 'var(--color-text)',
+                    main: 'var(--color-text)',
+                    secondary: 'var(--color-text-secondary)',
+                },
                 bg: {
+                    DEFAULT: 'var(--color-bg)',
                     main: 'var(--color-bg)',
                     secondary: 'var(--color-bg-secondary)',
                 },
                 text: {
+                    DEFAULT: 'var(--color-text)',
                     main: 'var(--color-text)',
                     secondary: 'var(--color-text-secondary)',
                 },

@@ -139,7 +139,7 @@ const techStack = {
 };
 
 const testimonials = [
-    { text: "Their engineering team delivered our ERP platform ahead of schedule with outstanding quality.", author: "CTO, Global Manufacturing Company" },
+    { text: "Their engineering team delivered our ERP platform ahead of schedule with outstanding quality.", author: "Prime Apparel Exporter, Wholesale Garments Manufacturer" },
     { text: "Highly reliable partner for AI and cloud-based product development.", author: "Product Head, SaaS Startup" },
     { text: "We modernized our legacy systems seamlessly with G2S Technologies.", author: "Director of IT, FinTech Firm" },
 ];
@@ -222,7 +222,7 @@ const Home = () => {
                             animate={{ scale: 1, opacity: 1, y: 0 }}
                             exit={{ scale: 0.9, opacity: 0, y: 30 }}
                             onClick={(e) => e.stopPropagation()}
-                            className="bg-bg-secondary border border-white/10 rounded-3xl p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto relative shadow-2xl"
+                            className="bg-theme-bg-secondary border border-white/10 rounded-3xl p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto relative shadow-2xl"
                         >
                             <button
                                 onClick={() => setSelectedService(null)}
@@ -311,7 +311,7 @@ const Home = () => {
                         >
                             Our <span className="text-primary">Expertise</span>
                         </motion.h2>
-                        <p className="text-xl text-text-secondary max-w-2xl mx-auto">End-to-end software development services tailored to accelerate your business growth.</p>
+                        <p className="text-xl text-theme-text-secondary max-w-2xl mx-auto">End-to-end software development services tailored to accelerate your business growth.</p>
                     </div>
 
                     <motion.div
@@ -334,7 +334,7 @@ const Home = () => {
                                     <service.icon size={28} />
                                 </div>
                                 <h3 className="text-xl font-bold mb-3 text-text group-hover:text-primary transition-colors">{service.title}</h3>
-                                <p className="text-text-secondary mb-8 leading-relaxed flex-grow">{service.desc}</p>
+                                <p className="text-theme-text-secondary mb-8 leading-relaxed flex-grow">{service.desc}</p>
                                 <button
                                     onClick={() => setSelectedService(service)}
                                     className="mt-auto inline-flex items-center gap-2 font-semibold text-primary text-sm overflow-hidden relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all after:duration-300 group-hover:after:w-full cursor-pointer hover:bg-transparent"
@@ -348,14 +348,14 @@ const Home = () => {
             </section>
 
             {/* Tech Stack Section */}
-            <section className="py-32 bg-bg-secondary/50 relative overflow-hidden">
+            <section className="py-32 bg-theme-bg-secondary/50 relative overflow-hidden">
                 {/* Background Pattern */}
                 <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, var(--color-text) 1px, transparent 0)', backgroundSize: '40px 40px' }}></div>
 
                 <div className="container mx-auto px-4 max-w-7xl relative z-10">
                     <div className="text-center mb-16">
                         <h2 className="text-4xl md:text-5xl font-extrabold mb-6 text-text">Technology <span className="text-primary">Stack</span></h2>
-                        <p className="text-xl text-text-secondary max-w-3xl mx-auto">We leverage the latest robust frameworks and tools to build future-proof solutions.</p>
+                        <p className="text-xl text-theme-text-secondary max-w-3xl mx-auto">We leverage the latest robust frameworks and tools to build future-proof solutions.</p>
                     </div>
 
                     <div className="flex justify-center mb-16">
@@ -366,7 +366,7 @@ const Home = () => {
                                     onClick={() => setActiveTab(tab)}
                                     className={`px-6 py-2.5 rounded-full text-base font-semibold transition-all duration-300 whitespace-nowrap ${activeTab === tab
                                         ? 'bg-primary text-white shadow-md'
-                                        : 'text-text-secondary hover:text-primary hover:bg-white/50'
+                                        : 'text-theme-text-secondary hover:text-primary hover:bg-white/50'
                                         }`}
                                 >
                                     {tab}
@@ -392,7 +392,7 @@ const Home = () => {
                                     animate={{ opacity: 1, scale: 1 }}
                                     transition={{ delay: index * 0.05 }}
                                 >
-                                    <div className="text-text-secondary transition-all duration-300 group-hover:text-primary group-hover:scale-110 group-hover:rotate-12">
+                                    <div className="text-theme-text-secondary transition-all duration-300 group-hover:text-primary group-hover:scale-110 group-hover:rotate-12">
                                         <Icon size={42} />
                                     </div>
                                     <span className="font-semibold text-text text-sm md:text-base text-center group-hover:text-primary transition-colors">{tech}</span>
@@ -410,9 +410,9 @@ const Home = () => {
                         <div className="max-w-2xl">
                             <span className="text-secondary font-semibold tracking-wider uppercase text-sm mb-4 block">Education & Upskilling</span>
                             <h2 className="text-4xl md:text-5xl font-extrabold mb-6 text-text">Upskill with <span className="text-secondary">Professional Training</span></h2>
-                            <p className="text-xl text-text-secondary">Industry-ready courses to launch your tech career, designed by experts.</p>
+                            <p className="text-xl text-theme-text-secondary">Industry-ready courses to launch your tech career, designed by experts.</p>
                         </div>
-                        <Link to="/training" className="hidden md:inline-flex px-8 py-3 bg-white dark:bg-slate-800 border border-border text-text font-semibold rounded-full hover:bg-bg-secondary hover:border-primary transition-all shadow-sm">
+                        <Link to="/training" className="hidden md:inline-flex px-8 py-3 bg-white dark:bg-slate-800 border border-border text-text font-semibold rounded-full hover:bg-theme-bg-secondary hover:border-primary transition-all shadow-sm">
                             View All Courses
                         </Link>
                     </div>
@@ -421,7 +421,7 @@ const Home = () => {
                         {courses.slice(0, 3).map((course, index) => (
                             <motion.div
                                 key={index}
-                                className="bg-bg-secondary rounded-[2rem] p-2 hover:bg-white dark:hover:bg-slate-800 border border-transparent hover:border-border transition-all duration-300 shadow-sm hover:shadow-xl group"
+                                className="bg-theme-bg-secondary rounded-[2rem] p-2 hover:bg-white dark:hover:bg-slate-800 border border-transparent hover:border-border transition-all duration-300 shadow-sm hover:shadow-xl group"
                                 initial={{ opacity: 0, y: 30 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
@@ -435,10 +435,10 @@ const Home = () => {
                                     </div>
 
                                     <h3 className="text-2xl font-bold mb-3 text-text group-hover:text-primary transition-colors">{course.title}</h3>
-                                    <p className="text-text-secondary mb-8 leading-relaxed flex-grow">{course.shortDesc}</p>
+                                    <p className="text-theme-text-secondary mb-8 leading-relaxed flex-grow">{course.shortDesc}</p>
 
                                     <div className="flex items-center justify-between mt-auto pt-6 border-t border-border/50">
-                                        <span className="text-sm font-medium text-text-secondary">{course.details.duration}</span>
+                                        <span className="text-sm font-medium text-theme-text-secondary">{course.details.duration}</span>
                                         <Link to={`/training/${course.id}`} className="inline-flex items-center gap-2 font-bold text-primary group-hover:translate-x-1 transition-transform">
                                             View Details <ArrowRight size={18} />
                                         </Link>
@@ -539,13 +539,13 @@ const Home = () => {
                 <div className="container mx-auto px-4 max-w-7xl">
                     <div className="text-center mb-20">
                         <h2 className="text-4xl md:text-5xl font-extrabold mb-6 text-text">Client <span className="text-secondary">Success Stories</span></h2>
-                        <p className="text-xl text-text-secondary max-w-2xl mx-auto">Don't just take our word for it. Here's what our partners say.</p>
+                        <p className="text-xl text-theme-text-secondary max-w-2xl mx-auto">Don't just take our word for it. Here's what our partners say.</p>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {testimonials.map((t, index) => (
                             <motion.div
                                 key={index}
-                                className="bg-bg-secondary p-10 rounded-[2rem] border border-border relative group hover:bg-white dark:hover:bg-slate-800 transition-colors duration-300 shadow-sm hover:shadow-lg"
+                                className="bg-theme-bg-secondary p-10 rounded-[2rem] border border-border relative group hover:bg-white dark:hover:bg-slate-800 transition-colors duration-300 shadow-sm hover:shadow-lg"
                                 initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
                                 whileInView={{ opacity: 1, x: 0 }}
                                 viewport={{ once: true }}
@@ -567,7 +567,7 @@ const Home = () => {
                                         </div>
                                         <div>
                                             <p className="font-bold text-text text-sm">{t.author.split(',')[0]}</p>
-                                            <p className="text-xs text-text-secondary uppercase tracking-wide">{t.author.split(',')[1]}</p>
+                                            <p className="text-xs text-theme-text-secondary uppercase tracking-wide">{t.author.split(',')[1]}</p>
                                         </div>
                                     </div>
                                 </div>
