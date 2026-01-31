@@ -37,7 +37,7 @@ const Navbar = ({ theme, toggleTheme }) => {
                             alt="SGS Codeworks"
                             className="h-10 w-10 object-contain transform group-hover:scale-110 transition-transform duration-300"
                         />
-                        <div className="flex items-baseline gap-1">
+                        <div className="flex items-center gap-2">
                             <span className="text-2xl font-bold text-white tracking-tight">SGS</span>
                             <span className="text-lg font-light text-slate-300 group-hover:text-primary transition-colors duration-300">Codeworks</span>
                         </div>
