@@ -43,7 +43,7 @@ const About = () => {
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8 }}
-                            className="text-5xl md:text-7xl font-extrabold mb-8 text-white tracking-tighter"
+                            className="text-5xl md:text-7xl font-bold mb-8 text-text tracking-tight"
                         >
                             We Engineer <br />
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-emerald-400 to-secondary italic">
@@ -56,7 +56,7 @@ const About = () => {
                             transition={{ delay: 0.2, duration: 0.8 }}
                             className="text-xl text-theme-text-secondary leading-relaxed"
                         >
-                            G2S Technologies is a premier software development powerhouse. We specialize in building sophisticated products that translate complex business requirements into high-impact, real-world solutions.
+                            SGS Codeworks is a premier software development powerhouse. We specialize in building sophisticated products that translate complex business requirements into high-impact, real-world solutions.
                         </motion.p>
                     </div>
 
@@ -131,28 +131,61 @@ const About = () => {
                     </div>
 
                     {/* Training CTA */}
-                    <div className="relative rounded-[3rem] bg-gradient-to-r from-primary/20 via-[#0B1221] to-secondary/20 p-8 md:p-16 border border-white/10 shadow-2xl overflow-hidden text-center">
-                        <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:40px_40px]" />
-                        <div className="relative z-10 max-w-3xl mx-auto">
+                    {/* Training CTA with Background Image and Animations */}
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+                        className="relative group rounded-[3rem] p-8 md:p-20 overflow-hidden text-center shadow-3xl border border-white/5"
+                    >
+                        {/* Background Container for Parallax */}
+                        <motion.div
+                            className="absolute inset-0 -z-10"
+                            whileHover={{ scale: 1.05 }}
+                            transition={{ duration: 1.5, ease: "easeOut" }}
+                        >
+                            <img
+                                src="/assets/imgs.jpeg"
+                                alt="Training Background"
+                                className="w-full h-full object-cover transform scale-110"
+                            />
+                            {/* Stronger overlay to ensure text visibility */}
+                            <div className="absolute inset-0 bg-black/70 backdrop-blur-[2px]" />
+                            <div className="absolute inset-0 bg-gradient-to-t from-primary/20 via-transparent to-secondary/20" />
+                        </motion.div>
+
+                        <div className="relative z-10 max-w-3xl mx-auto drop-shadow-2xl">
                             <motion.div
-                                initial={{ opacity: 0, scale: 0.95 }}
-                                whileInView={{ opacity: 1, scale: 1 }}
-                                transition={{ duration: 0.6 }}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.8 }}
                             >
-                                <Laptop className="mx-auto text-primary mb-6" size={48} />
-                                <h3 className="text-3xl md:text-4xl font-black text-white mb-6">Want to Join Our Ecosystem?</h3>
-                                <p className="text-lg text-slate-300 mb-10 leading-relaxed">
+                                <motion.div
+                                    animate={{
+                                        y: [0, -10, 0],
+                                        rotate: [0, 5, 0]
+                                    }}
+                                    transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                                    className="inline-block"
+                                >
+                                    <Laptop className="mx-auto text-primary mb-6 drop-shadow-[0_0_15px_rgba(var(--color-primary-rgb),0.5)]" size={64} />
+                                </motion.div>
+                                <h3 className="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight">
+                                    Want to Join Our <span className="text-primary italic">Ecosystem?</span>
+                                </h3>
+                                <p className="text-lg md:text-xl text-slate-300 mb-12 leading-relaxed opacity-90">
                                     In addition to our development services, we offer elite professional training programs to help you master the latest technologies and join the next generation of top-tier engineers.
                                 </p>
                                 <Link
                                     to="/training"
-                                    className="inline-flex items-center gap-3 px-10 py-5 bg-white text-[#0B1221] rounded-2xl font-black text-lg hover:bg-primary hover:text-white transition-all shadow-xl shadow-white/5"
+                                    className="inline-flex items-center gap-3 px-12 py-5 bg-white text-[#0B1221] rounded-2xl font-bold text-xl hover:bg-primary hover:text-white transition-all shadow-2xl hover:shadow-primary/40 transform hover:-translate-y-1 active:scale-95 duration-300 group/btn"
                                 >
-                                    Check Our Courses <ArrowRight size={20} />
+                                    Check Our Courses
+                                    <ArrowRight size={24} className="group-hover/btn:translate-x-2 transition-transform" />
                                 </Link>
                             </motion.div>
                         </div>
-                    </div>
+                    </motion.div>
                 </div>
             </section>
         </div>

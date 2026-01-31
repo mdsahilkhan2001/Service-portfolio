@@ -199,7 +199,7 @@ const Technology = () => {
                                                 <div className="p-3 bg-primary/10 rounded-2xl text-primary shadow-lg shadow-primary/5 border border-primary/20 group">
                                                     <CategoryIcon size={32} />
                                                 </div>
-                                                <h3 className="text-3xl md:text-4xl font-extrabold text-theme-text tracking-tight uppercase italic">
+                                                <h3 className="text-3xl md:text-4xl font-bold text-theme-text tracking-tight">
                                                     {category}
                                                 </h3>
                                             </div>

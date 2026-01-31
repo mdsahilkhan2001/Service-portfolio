@@ -13,16 +13,17 @@
   --color-accent: #34d399;
   /* Emerald 400 */
 
-  --color-bg: #ffffff;
-  --color-bg-secondary: #f0fdf4;
-  /* Emerald 50 (Very light green tint) */
-  --color-text: #064e3b;
-  /* Emerald 900 */
-  --color-text-secondary: #334155;
-  /* Slate 700 */
+  --color-bg: #f8fafc;
+  /* Slate 50 - Softer than pure white */
+  --color-bg-secondary: #ffffff;
+  /* White - For cards/sections to pop */
+  --color-text: #0f172a;
+  /* Slate 900 */
+  --color-text-secondary: #475569;
+  /* Slate 600 */
 
-  --color-border: #d1fae5;
-  /* Emerald 100 */
+  --color-border: #e2e8f0;
+  /* Slate 200 */
 
   --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);

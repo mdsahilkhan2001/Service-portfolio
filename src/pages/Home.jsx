@@ -223,11 +223,11 @@ const Home = () => {
                             animate={{ scale: 1, opacity: 1, y: 0 }}
                             exit={{ scale: 0.9, opacity: 0, y: 30 }}
                             onClick={(e) => e.stopPropagation()}
-                            className="bg-theme-bg-secondary border border-white/10 rounded-3xl p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto relative shadow-2xl"
+                            className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-white/10 rounded-3xl p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto relative shadow-2xl"
                         >
                             <button
                                 onClick={() => setSelectedService(null)}
-                                className="absolute top-6 right-6 p-2 rounded-full bg-white/5 hover:bg-white/10 text-white/70 hover:text-white transition-colors"
+                                className="absolute top-6 right-6 p-2 rounded-full bg-slate-100 dark:bg-white/5 hover:bg-slate-200 dark:hover:bg-white/10 text-slate-500 dark:text-white/70 hover:text-slate-700 dark:hover:text-white transition-colors"
                             >
                                 <X size={20} />
                             </button>
@@ -243,18 +243,18 @@ const Home = () => {
                             </div>
 
                             <div className="prose prose-invert max-w-none">
-                                <p className="text-slate-300 text-lg leading-relaxed mb-8">
+                                <p className="text-theme-text-secondary text-lg leading-relaxed mb-8">
                                     {selectedService.details.description}
                                 </p>
 
                                 <div className="grid md:grid-cols-2 gap-8 mb-8">
                                     <div>
-                                        <h4 className="text-white font-semibold mb-4 flex items-center gap-2">
+                                        <h4 className="text-text font-semibold mb-4 flex items-center gap-2">
                                             <ShieldCheck size={18} className="text-primary" /> Key Features
                                         </h4>
                                         <ul className="space-y-3">
                                             {selectedService.details.features.map((feature, idx) => (
-                                                <li key={idx} className="flex items-start gap-2 text-slate-400 text-sm">
+                                                <li key={idx} className="flex items-start gap-2 text-theme-text-secondary text-sm">
                                                     <Check size={16} className="text-secondary mt-0.5 shrink-0" />
                                                     <span>{feature}</span>
                                                 </li>
@@ -262,12 +262,12 @@ const Home = () => {
                                         </ul>
                                     </div>
                                     <div>
-                                        <h4 className="text-white font-semibold mb-4 flex items-center gap-2">
+                                        <h4 className="text-text font-semibold mb-4 flex items-center gap-2">
                                             <Code2 size={18} className="text-primary" /> Tech Stack
                                         </h4>
                                         <div className="flex flex-wrap gap-2">
                                             {selectedService.details.tech.map((tech, idx) => (
-                                                <span key={idx} className="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-slate-300">
+                                                <span key={idx} className="px-3 py-1 bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-full text-xs text-slate-600 dark:text-slate-300">
                                                     {tech}
                                                 </span>
                                             ))}
@@ -275,7 +275,7 @@ const Home = () => {
                                     </div>
                                 </div>
 
-                                <div className="flex justify-end pt-6 border-t border-white/10">
+                                <div className="flex justify-end pt-6 border-t border-slate-200 dark:border-white/10">
                                     <Link
                                         to="/contact"
                                         className="inline-flex items-center gap-2 px-6 py-3 bg-primary hover:bg-primary-dark text-white font-semibold rounded-xl transition-colors shadow-lg shadow-primary/20"
@@ -325,7 +325,7 @@ const Home = () => {
                         {services.map((service, index) => (
                             <motion.div
                                 key={index}
-                                className="glass-glow bg-white/5 dark:bg-slate-900/40 backdrop-blur-xl p-8 rounded-[2rem] shadow-lg border border-white/10 dark:border-white/5 hover:border-primary/50 transition-all duration-500 group relative overflow-hidden flex flex-col items-start"
+                                className="glass-glow bg-white dark:bg-slate-900/40 backdrop-blur-xl p-8 rounded-[2rem] shadow-xl border border-slate-200 dark:border-white/5 hover:border-primary/50 transition-all duration-500 group relative overflow-hidden flex flex-col items-start"
                                 variants={itemVariants}
                                 onMouseMove={handleMouseMove}
                                 whileHover={{ y: -10, scale: 1.02 }}
