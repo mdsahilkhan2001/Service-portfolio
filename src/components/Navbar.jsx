@@ -72,9 +72,9 @@ const Navbar = ({ theme, toggleTheme }) => {
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
                             >
-                                <Link to="/contact" className="px-6 py-2.5 bg-primary hover:bg-primary-dark text-white text-sm font-semibold rounded-full shadow-lg shadow-primary/20 transition-all hover:shadow-primary/40 flex items-center gap-2">
+                                <a href="tel:+917079990338" className="px-6 py-2.5 bg-primary hover:bg-primary-dark text-white text-sm font-semibold rounded-full shadow-lg shadow-primary/20 transition-all hover:shadow-primary/40 flex items-center gap-2">
                                     Book Call
-                                </Link>
+                                </a>
                             </motion.div>
                         </div>
                     </div>
@@ -142,13 +142,13 @@ const Navbar = ({ theme, toggleTheme }) => {
                             </div>
 
                             <div className="p-6 border-t border-white/10">
-                                <Link
-                                    to="/contact"
+                                <a
+                                    href="tel:+917079990338"
                                     onClick={() => setIsOpen(false)}
                                     className="block w-full text-center px-6 py-3 bg-primary hover:bg-primary-dark text-white font-semibold rounded-xl shadow-lg shadow-primary/20 transition-all active:scale-95"
                                 >
                                     Book Discovery Call
-                                </Link>
+                                </a>
                             </div>
                         </motion.div>
                     </>

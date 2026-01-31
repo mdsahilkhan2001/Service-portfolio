@@ -12,6 +12,8 @@ import Portfolio from './pages/Portfolio'
 import Contact from './pages/Contact'
 import Training from './pages/Training'
 import CourseDetails from './pages/CourseDetails'
+import ScrollToTop from './components/ScrollToTop'
+import ScrollToTopButton from './components/ScrollToTopButton'
 
 function App() {
   const [theme, setTheme] = useState('dark');
@@ -38,6 +40,8 @@ function App() {
 
   return (
     <div className="app-layout">
+      <ScrollToTop />
+      <ScrollToTopButton />
       <Toaster position="top-right" reverseOrder={false} />
       <Navbar theme={theme} toggleTheme={toggleTheme} />
       <main>

@@ -191,9 +191,9 @@ const Home = () => {
     };
 
     return (
-        <div className="pt-0 overflow-x-hidden relative"> {/* Removed top padding for slider */}
+        <div className="pt-16 overflow-x-hidden relative"> {/* Added top padding for sticky navbar */}
             {/* Dark Mask for 전체 배경 */}
-            <div className="fixed inset-0 bg-bg pointer-events-none -z-20" />
+            <div className="fixed inset-0 bg-theme-bg pointer-events-none -z-20" />
 
             {/* Dynamic Background Elements */}
             <div className="fixed inset-0 tech-grid pointer-events-none -z-10" />
@@ -387,7 +387,7 @@ const Home = () => {
                             return (
                                 <motion.div
                                     key={index}
-                                    className="bg-bg p-6 rounded-2xl border border-border flex flex-col items-center gap-4 transition-all duration-300 hover:border-primary/50 hover:shadow-glow hover:-translate-y-2 group relative"
+                                    className="bg-theme-bg p-6 rounded-2xl border border-border flex flex-col items-center gap-4 transition-all duration-300 hover:border-primary/50 hover:shadow-glow hover:-translate-y-2 group relative"
                                     initial={{ opacity: 0, scale: 0.9 }}
                                     animate={{ opacity: 1, scale: 1 }}
                                     transition={{ delay: index * 0.05 }}
@@ -404,7 +404,7 @@ const Home = () => {
             </section>
 
             {/* Featured Trainings */}
-            <section className="py-32 bg-bg relative">
+            <section className="py-32 bg-theme-bg relative">
                 <div className="container mx-auto px-4 max-w-7xl">
                     <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
                         <div className="max-w-2xl">
@@ -578,7 +578,7 @@ const Home = () => {
             </section>
 
             {/* CTA Section */}
-            <section className="py-24 px-4 bg-bg">
+            <section className="py-24 px-4 bg-theme-bg">
                 <motion.div
                     className="max-w-6xl mx-auto relative rounded-[3rem] overflow-hidden text-center shadow-2xl"
                     initial={{ opacity: 0, y: 40 }}
