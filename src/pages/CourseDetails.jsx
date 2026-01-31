@@ -22,9 +22,9 @@ const CourseDetails = () => {
     }
 
     return (
-        <div className="min-h-screen bg-bg pt-16">
+        <div className="min-h-screen bg-theme-bg pt-16">
             {/* Hero Section */}
-            <section className="pt-24 pb-16 bg-bg-secondary">
+            <section className="pt-24 pb-16 bg-theme-bg-secondary">
                 <div className="container mx-auto px-4 max-w-7xl">
                     <Link to="/training" className="inline-flex items-center gap-2 font-semibold text-primary text-sm hover:gap-3 transition-all mb-8">
                         <ArrowLeft size={20} /> Back to Courses
@@ -41,7 +41,7 @@ const CourseDetails = () => {
                         <h1 className="text-4xl md:text-5xl font-extrabold mb-4 text-text">
                             {course.title}
                         </h1>
-                        <p className="text-xl text-text-secondary max-w-3xl mb-8">
+                        <p className="text-xl text-theme-text-secondary max-w-3xl mb-8">
                             {course.description}
                         </p>
 
@@ -49,21 +49,21 @@ const CourseDetails = () => {
                             <div className="flex items-center gap-3">
                                 <Clock className="text-primary" />
                                 <div>
-                                    <span className="block text-sm text-text-secondary">Duration</span>
+                                    <span className="block text-sm text-theme-text-secondary">Duration</span>
                                     <strong className="text-text font-semibold">{course.details.duration}</strong>
                                 </div>
                             </div>
                             <div className="flex items-center gap-3">
                                 <Monitor className="text-primary" />
                                 <div>
-                                    <span className="block text-sm text-text-secondary">Mode</span>
+                                    <span className="block text-sm text-theme-text-secondary">Mode</span>
                                     <strong className="text-text font-semibold">{course.details.mode}</strong>
                                 </div>
                             </div>
                             <div className="flex items-center gap-3">
                                 <Award className="text-primary" />
                                 <div>
-                                    <span className="block text-sm text-text-secondary">Level</span>
+                                    <span className="block text-sm text-theme-text-secondary">Level</span>
                                     <strong className="text-text font-semibold">{course.details.level}</strong>
                                 </div>
                             </div>
@@ -82,13 +82,13 @@ const CourseDetails = () => {
                             <h2 className="text-2xl font-bold text-text mb-8">Course Syllabus</h2>
                             <div className="flex flex-col gap-6">
                                 {course.details.syllabus.map((module, idx) => (
-                                    <div key={idx} className="p-6 bg-bg-secondary rounded-2xl border border-border">
+                                    <div key={idx} className="p-6 bg-theme-bg-secondary rounded-2xl border border-border">
                                         <h4 className="text-lg font-semibold mb-4 text-primary">
                                             Module {idx + 1}: {module.module}
                                         </h4>
                                         <ul className="pl-5 flex flex-col gap-2">
                                             {module.topics.map((topic, tIdx) => (
-                                                <li key={tIdx} className="text-text-secondary list-disc">{topic}</li>
+                                                <li key={tIdx} className="text-theme-text-secondary list-disc">{topic}</li>
                                             ))}
                                         </ul>
                                     </div>

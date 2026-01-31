@@ -18,35 +18,37 @@ const services = [
 
 const Services = () => {
     return (
-        <div className="pt-24 pb-16 min-h-screen bg-bg">
-            <div className="container mx-auto px-4 max-w-7xl">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    className="text-center mb-16"
-                >
-                    <h2 className="text-4xl font-extrabold mb-4 bg-gradient-to-br from-text to-text-secondary bg-clip-text text-transparent">Our Services</h2>
-                    <p className="text-xl text-theme-text-secondary max-w-2xl mx-auto">Comprehensive software solutions to drive your business forward.</p>
-                </motion.div>
+        <div className="pt-16 min-h-screen bg-theme-bg">
+            <section className="py-24 relative">
+                <div className="container mx-auto px-4 max-w-7xl">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        className="text-center mb-16"
+                    >
+                        <h2 className="text-4xl font-extrabold mb-4 bg-gradient-to-br from-text to-text-secondary bg-clip-text text-transparent">Our Services</h2>
+                        <p className="text-xl text-theme-text-secondary max-w-2xl mx-auto">Comprehensive software solutions to drive your business forward.</p>
+                    </motion.div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-                    {services.map((service, index) => (
-                        <motion.div
-                            key={index}
-                            className="bg-theme-bg-secondary p-8 rounded-3xl border border-border flex flex-col items-start gap-4 transition-all duration-300 hover:border-primary hover:shadow-lg hover:-translate-y-1 group"
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: index * 0.1 }}
-                        >
-                            <div className="inline-flex p-4 bg-primary/10 rounded-2xl mb-2 text-primary group-hover:scale-110 transition-transform duration-300">
-                                <service.icon size={32} />
-                            </div>
-                            <h3 className="text-xl font-bold text-text">{service.title}</h3>
-                            <p className="text-theme-text-secondary leading-relaxed">{service.desc}</p>
-                        </motion.div>
-                    ))}
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                        {services.map((service, index) => (
+                            <motion.div
+                                key={index}
+                                className="bg-theme-bg-secondary p-8 rounded-3xl border border-border flex flex-col items-start gap-4 transition-all duration-300 hover:border-primary hover:shadow-lg hover:-translate-y-1 group"
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: index * 0.1 }}
+                            >
+                                <div className="inline-flex p-4 bg-primary/10 rounded-2xl mb-2 text-primary group-hover:scale-110 transition-transform duration-300">
+                                    <service.icon size={32} />
+                                </div>
+                                <h3 className="text-xl font-bold text-text">{service.title}</h3>
+                                <p className="text-theme-text-secondary leading-relaxed">{service.desc}</p>
+                            </motion.div>
+                        ))}
+                    </div>
                 </div>
-            </div>
+            </section>
         </div>
     );
 };

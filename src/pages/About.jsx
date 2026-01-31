@@ -15,7 +15,7 @@ const features = [
 
 const About = () => {
     return (
-        <div className="pt-16 min-h-screen bg-bg">
+        <div className="pt-16 min-h-screen bg-theme-bg">
             <section className="py-24 relative">
                 <div className="container mx-auto px-4 max-w-7xl">
                     <div className="text-center mb-16">
@@ -50,7 +50,7 @@ const About = () => {
                         {courses.map((course, index) => (
                             <motion.div
                                 key={index}
-                                className="bg-bg/80 backdrop-blur-md p-8 rounded-3xl shadow-sm hover:shadow-lg border border-border hover:border-primary transition-all duration-300 relative overflow-hidden group"
+                                className="bg-theme-bg/80 backdrop-blur-md p-8 rounded-3xl shadow-sm hover:shadow-lg border border-border hover:border-primary transition-all duration-300 relative overflow-hidden group"
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: index * 0.1 }}
