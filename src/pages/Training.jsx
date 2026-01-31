@@ -15,7 +15,7 @@ const features = [
 
 const Training = () => {
     return (
-        <div className="pt-16 min-h-screen bg-bg">
+        <div className="pt-16 min-h-screen bg-theme-bg">
             <section className="py-24 relative">
                 <div className="container mx-auto px-4 max-w-7xl">
                     <div className="text-center mb-16">
@@ -38,7 +38,7 @@ const Training = () => {
                                 initial={{ opacity: 0, y: 10 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: i * 0.1 }}
-                                className="flex items-center gap-2 text-text font-medium text-lg bg-theme-bg-secondary px-6 py-3 rounded-full border border-border shadow-sm"
+                                className="flex items-center gap-2 text-theme-text font-medium text-lg bg-theme-bg-secondary px-6 py-3 rounded-full border border-border shadow-sm"
                             >
                                 <f.icon className="text-primary" size={20} />
                                 <span>{f.text}</span>
@@ -50,7 +50,7 @@ const Training = () => {
                         {courses.map((course, index) => (
                             <motion.div
                                 key={index}
-                                className="bg-bg/80 backdrop-blur-md p-8 rounded-3xl shadow-sm hover:shadow-lg border border-border hover:border-primary transition-all duration-300 relative overflow-hidden group"
+                                className="bg-theme-bg/80 backdrop-blur-md p-8 rounded-3xl shadow-sm hover:shadow-lg border border-border hover:border-primary transition-all duration-300 relative overflow-hidden group"
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: index * 0.1 }}
