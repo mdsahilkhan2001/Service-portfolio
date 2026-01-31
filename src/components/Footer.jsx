@@ -16,10 +16,10 @@ const Footer = () => {
                             Accelerating digital transformation with scalable software solutions. We build modern web apps, AI-powered systems, and cloud-native software.
                         </p>
                         <div className="flex gap-4">
-                            <a href="#" aria-label="LinkedIn" className="text-text-secondary hover:text-primary transition-colors"><Linkedin size={20} /></a>
-                            <a href="#" aria-label="Twitter" className="text-text-secondary hover:text-primary transition-colors"><Twitter size={20} /></a>
-                            <a href="#" aria-label="Facebook" className="text-text-secondary hover:text-primary transition-colors"><Facebook size={20} /></a>
-                            <a href="#" aria-label="Instagram" className="text-text-secondary hover:text-primary transition-colors"><Instagram size={20} /></a>
+                            <a href="https://www.linkedin.com/in/sahilkhanq1/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-text-secondary hover:text-primary transition-colors"><Linkedin size={20} /></a>
+                            <a href="https://x.com/Mdsahil46670066" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="text-text-secondary hover:text-primary transition-colors"><Twitter size={20} /></a>
+                            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="text-text-secondary hover:text-primary transition-colors"><Facebook size={20} /></a>
+                            <a href="https://www.instagram.com/itsahil_khan1/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-text-secondary hover:text-primary transition-colors"><Instagram size={20} /></a>
                         </div>
                     </div>
 
@@ -49,15 +49,22 @@ const Footer = () => {
                         <h4 className="text-lg font-semibold text-text mb-5">Contact Us</h4>
                         <div className="flex items-center gap-3 text-text-secondary mb-4">
                             <Mail size={18} className="text-primary" />
-                            <span>ask@g2stechnologies.com</span>
+                            <span>mdsahilkhan2001@gmail.com</span>
                         </div>
                         <div className="flex items-center gap-3 text-text-secondary mb-4">
                             <Phone size={18} className="text-primary" />
-                            <span>+1 (555) 123-4567</span>
+                            <a href="tel:+917079990338" className="hover:text-primary transition-colors cursor-pointer">+91 7079990338</a>
                         </div>
                         <div className="flex items-center gap-3 text-text-secondary mb-4">
                             <MapPin size={18} className="text-primary" />
-                            <span>123 Tech Park, Innovation City</span>
+                            <a
+                                href="https://www.google.com/maps/search/?api=1&query=No.+3,+Valpara+Building,+Service+Road,+17th+Main+Road,+1st+Stage,+Aicobo+Nagar,+near+KEB+Office,+BTM+Layout,+Bengaluru+560068"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="hover:text-primary transition-colors cursor-pointer"
+                            >
+                                No. 3, Valpara Building, BTM Layout, Bengaluru (560068)
+                            </a>
                         </div>
                     </div>
                 </div>

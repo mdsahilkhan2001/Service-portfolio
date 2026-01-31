@@ -139,7 +139,7 @@ const techStack = {
 };
 
 const testimonials = [
-    { text: "Their engineering team delivered our ERP platform ahead of schedule with outstanding quality.", author: "CTO, Global Manufacturing Company" },
+    { text: "Their engineering team delivered our ERP platform ahead of schedule with outstanding quality.", author: "Prime Apparel Exporter, Wholesale Garments Manufacturer" },
     { text: "Highly reliable partner for AI and cloud-based product development.", author: "Product Head, SaaS Startup" },
     { text: "We modernized our legacy systems seamlessly with G2S Technologies.", author: "Director of IT, FinTech Firm" },
 ];
