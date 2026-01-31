@@ -30,13 +30,17 @@ const Navbar = ({ theme, toggleTheme }) => {
                 <div className="w-full max-w-7xl bg-[#0B1120]/90 backdrop-blur-md border border-white/10 rounded-full shadow-2xl px-6 h-16 flex items-center justify-between transition-all duration-300">
 
                     {/* Logo */}
-                    <Link to="/" className="flex items-center gap-2 group">
-                        <div className="w-8 h-8 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center transform py-0 group-hover:rotate-12 transition-transform duration-300 shadow-lg shadow-primary/20">
-                            <span className="text-white font-bold text-lg">G</span>
+
+                    <Link to="/" className="flex items-center gap-3 group">
+                        <img
+                            src="/assets/sgs-icon.png"
+                            alt="SGS Codeworks"
+                            className="h-10 w-10 object-contain transform group-hover:scale-110 transition-transform duration-300"
+                        />
+                        <div className="flex items-baseline gap-1">
+                            <span className="text-2xl font-bold text-white tracking-tight">SGS</span>
+                            <span className="text-lg font-light text-slate-300 group-hover:text-primary transition-colors duration-300">Codeworks</span>
                         </div>
-                        <span className="text-xl font-bold text-white tracking-tight">
-                            G2S<span className="text-primary">Technologies</span>
-                        </span>
                     </Link>
 
                     {/* Desktop Navigation */}
