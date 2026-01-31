@@ -27,7 +27,7 @@ const Training = () => {
                         >
                             Professional IT Training
                         </motion.h2>
-                        <p className="text-lg text-text-secondary max-w-2xl mx-auto">Upskill yourself with industry-ready courses designed by experts.</p>
+                        <p className="text-lg text-theme-text-secondary max-w-2xl mx-auto">Upskill yourself with industry-ready courses designed by experts.</p>
                     </div>
 
                     {/* Features Banner */}
@@ -38,7 +38,7 @@ const Training = () => {
                                 initial={{ opacity: 0, y: 10 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: i * 0.1 }}
-                                className="flex items-center gap-2 text-text font-medium text-lg bg-bg-secondary px-6 py-3 rounded-full border border-border shadow-sm"
+                                className="flex items-center gap-2 text-text font-medium text-lg bg-theme-bg-secondary px-6 py-3 rounded-full border border-border shadow-sm"
                             >
                                 <f.icon className="text-primary" size={20} />
                                 <span>{f.text}</span>
@@ -60,7 +60,7 @@ const Training = () => {
                                     <course.icon size={32} />
                                 </div>
                                 <h3 className="text-xl font-bold mb-3">{course.title}</h3>
-                                <p className="text-text-secondary mb-6 leading-relaxed">{course.shortDesc}</p>
+                                <p className="text-theme-text-secondary mb-6 leading-relaxed">{course.shortDesc}</p>
 
                                 <div className="mt-6">
                                     <Link to={`/training/${course.id}`} className="inline-flex items-center gap-2 font-semibold text-primary text-sm hover:gap-3 transition-all">

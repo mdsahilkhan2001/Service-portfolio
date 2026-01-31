@@ -77,7 +77,7 @@ const ContactForm = ({ inquiryContext }) => {
     };
 
     return (
-        <div className="bg-bg-secondary backdrop-blur-md p-10 rounded-3xl border border-border shadow-lg transition-colors duration-300">
+        <div className="bg-theme-bg-secondary backdrop-blur-md p-10 rounded-3xl border border-border shadow-lg transition-colors duration-300">
             <h3 className="text-2xl font-bold mb-6 text-primary">
                 {inquiryContext ? `Enquire about ${inquiryContext}` : 'Send us a Message'}
             </h3>
@@ -94,7 +94,8 @@ const ContactForm = ({ inquiryContext }) => {
                         id="user_name"
                         placeholder="John Doe"
                         required
-                        className="p-3 rounded-xl border border-border bg-bg text-text placeholder:text-slate-400 dark:placeholder:text-slate-600 transition-all focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/50"
+                        className="p-3 rounded-xl border border-border !bg-theme-bg !text-theme-text placeholder:text-slate-400 dark:placeholder:text-slate-600 transition-all focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/50"
+                        style={{ color: 'var(--color-text)', backgroundColor: 'var(--color-bg)' }}
                     />
                 </div>
 
@@ -106,7 +107,8 @@ const ContactForm = ({ inquiryContext }) => {
                         id="user_email"
                         placeholder="john@company.com"
                         required
-                        className="p-3 rounded-xl border border-border bg-bg text-text placeholder:text-slate-400 dark:placeholder:text-slate-600 transition-all focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/50"
+                        className="p-3 rounded-xl border border-border !bg-theme-bg !text-theme-text placeholder:text-slate-400 dark:placeholder:text-slate-600 transition-all focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/50"
+                        style={{ color: 'var(--color-text)', backgroundColor: 'var(--color-bg)' }}
                     />
                 </div>
 
@@ -116,10 +118,10 @@ const ContactForm = ({ inquiryContext }) => {
                         country={'in'}
                         value={phone}
                         onChange={phone => setPhone(phone)}
-                        inputClass="!w-full !h-[50px] !bg-bg !border-border !text-text !rounded-xl !font-sans !text-base focus:!border-primary focus:!ring-1 focus:!ring-primary/50 placeholder:!text-slate-400 dark:placeholder:!text-slate-600"
+                        inputClass="!w-full !h-[50px] !bg-theme-bg !border-border !text-theme-text !rounded-xl !font-sans !text-base focus:!border-primary focus:!ring-1 focus:!ring-primary/50 placeholder:!text-slate-400 dark:placeholder:!text-slate-600"
                         containerClass="!w-full"
-                        buttonClass="!bg-bg !border-border !rounded-l-xl hover:!bg-bg-secondary"
-                        dropdownClass="!bg-bg !text-text !border-border shadow-xl country-list-dark"
+                        buttonClass="!bg-theme-bg !border-border !rounded-l-xl hover:!bg-theme-bg-secondary"
+                        dropdownClass="!bg-theme-bg !text-theme-text !border-border shadow-xl country-list-dark"
                         enableSearch={true}
                         searchStyle={{ background: 'var(--color-bg)', color: 'var(--color-text)', border: '1px solid var(--color-border)' }}
                     />
@@ -132,7 +134,8 @@ const ContactForm = ({ inquiryContext }) => {
                         name="company"
                         id="company"
                         placeholder="Your Company (Optional)"
-                        className="p-3 rounded-xl border border-border bg-bg text-text placeholder:text-slate-400 dark:placeholder:text-slate-600 transition-all focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/50"
+                        className="p-3 rounded-xl border border-border !bg-theme-bg !text-theme-text placeholder:text-slate-400 dark:placeholder:text-slate-600 transition-all focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/50"
+                        style={{ color: 'var(--color-text)', backgroundColor: 'var(--color-bg)' }}
                     />
                 </div>
 
@@ -162,7 +165,8 @@ const ContactForm = ({ inquiryContext }) => {
                         required
                         value={message}
                         onChange={(e) => setMessage(e.target.value)}
-                        className="p-3 rounded-xl border border-border bg-bg text-text placeholder:text-slate-400 dark:placeholder:text-slate-600 transition-all focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/50 resize-y"
+                        className="p-3 rounded-xl border border-border !bg-theme-bg !text-theme-text placeholder:text-slate-400 dark:placeholder:text-slate-600 transition-all focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/50 resize-y"
+                        style={{ color: 'var(--color-text)', backgroundColor: 'var(--color-bg)' }}
                     ></textarea>
                 </div>
 

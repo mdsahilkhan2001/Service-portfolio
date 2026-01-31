@@ -1,6 +1,6 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
 :root {
   /* Light Mode Variables - Emerald Theme */
@@ -97,6 +97,14 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+input,
+textarea,
+select {
+  color: var(--color-text);
+  font-family: inherit;
+  background-color: transparent;
 }
 
 body {
