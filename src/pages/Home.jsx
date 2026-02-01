@@ -331,9 +331,20 @@ const Home = () => {
                                 whileHover={{ y: -10, scale: 1.02 }}
                             >
                                 <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-                                <div className="inline-flex p-4 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-2xl mb-6 text-primary shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300 border border-primary/20">
+                                <motion.div
+                                    className="inline-flex p-4 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-2xl mb-6 text-primary shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300 border border-primary/20"
+                                    animate={{
+                                        y: [0, -6, 0],
+                                    }}
+                                    transition={{
+                                        duration: 4,
+                                        repeat: Infinity,
+                                        ease: "easeInOut",
+                                        delay: index * 0.2
+                                    }}
+                                >
                                     <service.icon size={28} />
-                                </div>
+                                </motion.div>
                                 <h3 className="text-xl font-bold mb-3 text-text group-hover:text-primary transition-colors">{service.title}</h3>
                                 <p className="text-theme-text-secondary mb-8 leading-relaxed flex-grow">{service.desc}</p>
                                 <button
@@ -365,42 +376,52 @@ const Home = () => {
                                 <button
                                     key={tab}
                                     onClick={() => setActiveTab(tab)}
-                                    className={`px-6 py-2.5 rounded-full text-base font-semibold transition-all duration-300 whitespace-nowrap ${activeTab === tab
-                                        ? 'bg-primary text-white shadow-md'
-                                        : 'text-theme-text-secondary hover:text-primary hover:bg-white/50'
+                                    className={`relative px-8 py-3 rounded-full text-base font-bold transition-all duration-500 whitespace-nowrap z-10 ${activeTab === tab ? 'text-white' : 'text-theme-text-secondary hover:text-text'
                                         }`}
                                 >
-                                    {tab}
+                                    {activeTab === tab && (
+                                        <motion.div
+                                            layoutId="activeTechTab"
+                                            className="absolute inset-0 bg-primary rounded-full shadow-[0_0_20px_rgba(var(--color-primary-rgb),0.6)]"
+                                            transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                                        />
+                                    )}
+                                    <span className="relative z-10">{tab}</span>
                                 </button>
                             ))}
                         </div>
                     </div>
 
-                    <motion.div
-                        key={activeTab}
-                        initial={{ opacity: 0, filter: 'blur(10px)', y: 20 }}
-                        animate={{ opacity: 1, filter: 'blur(0px)', y: 0 }}
-                        transition={{ duration: 0.5 }}
-                        className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 max-w-6xl mx-auto"
-                    >
-                        {techStack[activeTab].map((tech, index) => {
-                            const Icon = techIcons[tech] || Code2;
-                            return (
-                                <motion.div
-                                    key={index}
-                                    className="bg-theme-bg p-6 rounded-2xl border border-border flex flex-col items-center gap-4 transition-all duration-300 hover:border-primary/50 hover:shadow-glow hover:-translate-y-2 group relative"
-                                    initial={{ opacity: 0, scale: 0.9 }}
-                                    animate={{ opacity: 1, scale: 1 }}
-                                    transition={{ delay: index * 0.05 }}
-                                >
-                                    <div className="text-theme-text-secondary transition-all duration-300 group-hover:text-primary group-hover:scale-110 group-hover:rotate-12">
-                                        <Icon size={42} />
-                                    </div>
-                                    <span className="font-semibold text-text text-sm md:text-base text-center group-hover:text-primary transition-colors">{tech}</span>
-                                </motion.div>
-                            );
-                        })}
-                    </motion.div>
+                    <AnimatePresence mode="wait">
+                        <motion.div
+                            key={activeTab}
+                            initial={{ opacity: 0, filter: 'blur(10px)', scale: 0.95, y: 10 }}
+                            animate={{ opacity: 1, filter: 'blur(0px)', scale: 1, y: 0 }}
+                            exit={{ opacity: 0, filter: 'blur(10px)', scale: 0.95, y: 10 }}
+                            transition={{ duration: 0.4, ease: "easeOut" }}
+                            className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 max-w-6xl mx-auto"
+                        >
+                            {techStack[activeTab].map((tech, index) => {
+                                const Icon = techIcons[tech] || Code2;
+                                return (
+                                    <motion.div
+                                        key={index}
+                                        onMouseMove={handleMouseMove}
+                                        className="glass-glow bg-theme-bg p-6 rounded-2xl border border-border flex flex-col items-center gap-4 transition-all duration-500 hover:border-primary/50 hover:shadow-glow hover:-translate-y-2 group relative overflow-hidden"
+                                        initial={{ opacity: 0, scale: 0.9 }}
+                                        animate={{ opacity: 1, scale: 1 }}
+                                        transition={{ delay: index * 0.03 }}
+                                    >
+                                        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                                        <div className="relative z-10 text-theme-text-secondary transition-all duration-500 group-hover:text-primary group-hover:scale-110 group-hover:rotate-6">
+                                            <Icon size={42} />
+                                        </div>
+                                        <span className="relative z-10 font-bold text-text text-sm md:text-base text-center group-hover:text-primary transition-colors tracking-tight">{tech}</span>
+                                    </motion.div>
+                                );
+                            })}
+                        </motion.div>
+                    </AnimatePresence>
                 </div>
             </section>
 
