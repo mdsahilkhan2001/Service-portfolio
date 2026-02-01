@@ -37,7 +37,7 @@ const Portfolio = () => {
             <section className="py-24 relative">
                 <div className="container mx-auto px-4 max-w-7xl">
                     <div className="text-center mb-16">
-                        <h2 className="text-4xl font-extrabold mb-4 text-text">Our Work</h2>
+                        <h2 className="text-4xl font-bold mb-4 text-text">Our Work</h2>
                         <p className="text-xl text-theme-text-secondary max-w-2xl mx-auto">Explore our recent projects and success stories.</p>
                     </div>
 
