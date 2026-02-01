@@ -38,7 +38,7 @@ const CourseDetails = () => {
                         <div className="inline-flex p-4 bg-primary/10 rounded-2xl mb-6">
                             <course.icon size={48} className="text-primary" />
                         </div>
-                        <h1 className="text-4xl md:text-5xl font-extrabold mb-4 text-text">
+                        <h1 className="text-4xl md:text-5xl font-bold mb-4 text-text">
                             {course.title}
                         </h1>
                         <p className="text-xl text-theme-text-secondary max-w-3xl mb-8">
