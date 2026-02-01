@@ -23,7 +23,7 @@ const Training = () => {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5 }}
-                            className="text-4xl font-extrabold mb-4 bg-gradient-to-br from-text to-text-secondary bg-clip-text text-transparent"
+                            className="text-4xl font-bold mb-4 bg-gradient-to-br from-text to-text-secondary bg-clip-text text-transparent"
                         >
                             Professional IT Training
                         </motion.h2>

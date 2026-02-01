@@ -147,29 +147,9 @@ const Portfolio = () => {
 
             <section className="relative z-10 py-24">
                 <div className="container mx-auto px-4 max-w-7xl">
-                    <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-primary/5 blur-[120px] rounded-full -z-0 pointer-events-none" />
-
-                    {/* Filter Tabs */}
-                    <div className="flex justify-center mb-20">
-                        <div className="relative p-1.5 bg-white/5 dark:bg-white/[0.02] backdrop-blur-3xl border border-white/10 rounded-2xl inline-flex items-center gap-1 shadow-2xl overflow-x-auto max-w-full">
-                            {categories.map((cat) => (
-                                <button
-                                    key={cat}
-                                    onClick={() => setActiveCategory(cat)}
-                                    className={`relative px-8 py-3 rounded-xl text-sm font-bold tracking-wide transition-all duration-500 whitespace-nowrap z-10 ${activeCategory === cat ? 'text-white' : 'text-theme-text-secondary hover:text-text'
-                                        }`}
-                                >
-                                    {activeCategory === cat && (
-                                        <motion.div
-                                            layoutId="activeCategory"
-                                            className="absolute inset-0 bg-primary rounded-xl shadow-[0_0_20px_rgba(var(--color-primary-rgb),0.5)]"
-                                            transition={{ type: "spring", bounce: 0.25, duration: 0.6 }}
-                                        />
-                                    )}
-                                    <span className="relative z-10">{cat}</span>
-                                </button>
-                            ))}
-                        </div>
+                    <div className="text-center mb-16">
+                        <h2 className="text-4xl font-bold mb-4 text-text">Our Work</h2>
+                        <p className="text-xl text-theme-text-secondary max-w-2xl mx-auto">Explore our recent projects and success stories.</p>
                     </div>
 
                     {/* Projects Grid */}

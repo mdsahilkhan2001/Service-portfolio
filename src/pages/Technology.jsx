@@ -116,7 +116,7 @@ const Technology = () => {
                                 initial={{ opacity: 0, x: -50 }}
                                 animate={{ opacity: 1, x: 0 }}
                                 transition={{ duration: 0.8, ease: "easeOut" }}
-                                className="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-8 text-theme-text tracking-tight leading-tight lg:leading-none"
+                                className="text-4xl md:text-6xl lg:text-7xl font-bold mb-8 text-theme-text tracking-tight leading-tight lg:leading-none"
                             >
                                 Powering Digital <br />
                                 <span className="text-primary bg-gradient-to-r from-primary via-secondary to-primary bg-[length:200%_auto] animate-gradient-text bg-clip-text text-transparent">Innovation</span>
