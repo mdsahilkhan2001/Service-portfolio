@@ -401,13 +401,13 @@ const Home = () => {
                     </div>
 
                     {/* Classy Glass Tab System */}
-                    <div className="flex justify-center mb-20">
-                        <div className="relative p-1.5 bg-white/5 dark:bg-white/[0.02] backdrop-blur-3xl border border-white/10 rounded-2xl inline-flex items-center gap-1 shadow-2xl">
+                    <div className="flex justify-center mb-16 px-4 md:px-0">
+                        <div className="relative p-2 md:p-1.5 bg-white/5 dark:bg-white/[0.02] backdrop-blur-3xl border border-white/10 rounded-2xl grid grid-cols-2 md:flex items-center gap-2 md:gap-1 shadow-2xl w-full md:w-auto">
                             {Object.keys(techStack).map((tab) => (
                                 <button
                                     key={tab}
                                     onClick={() => setActiveTab(tab)}
-                                    className={`relative px-8 py-3 rounded-xl text-sm font-bold tracking-wide transition-all duration-500 whitespace-nowrap z-10 ${activeTab === tab ? 'text-white' : 'text-theme-text-secondary hover:text-text'
+                                    className={`relative px-4 md:px-8 py-3 rounded-xl text-sm font-bold tracking-wide transition-all duration-500 whitespace-nowrap z-10 w-full md:w-auto ${activeTab === tab ? 'text-white' : 'text-theme-text-secondary hover:text-text'
                                         }`}
                                 >
                                     {activeTab === tab && (
@@ -470,7 +470,7 @@ const Home = () => {
             </section>
 
             {/* Featured Trainings */}
-            <section className="py-32 bg-theme-bg relative">
+            {/* <section className="py-32 bg-theme-bg relative">
                 <div className="container mx-auto px-4 max-w-7xl">
                     <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
                         <div className="max-w-2xl">
@@ -520,7 +520,7 @@ const Home = () => {
                         </Link>
                     </div>
                 </div>
-            </section>
+            </section> */}
 
             {/* Why Choose Us */}
             <section className="py-32 bg-[#020617] text-white relative overflow-hidden">

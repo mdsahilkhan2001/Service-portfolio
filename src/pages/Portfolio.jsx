@@ -126,7 +126,7 @@ const Portfolio = () => {
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8 }}
-                            className="text-6xl md:text-8xl font-black mb-10 text-white tracking-tighter leading-tight drop-shadow-[0_10px_35px_rgba(0,0,0,0.5)]"
+                            className="text-5xl md:text-7xl font-black mb-10 text-white tracking-tighter leading-tight drop-shadow-[0_10px_35px_rgba(0,0,0,0.5)]"
                         >
                             Crafting Digital <br />
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-emerald-400 to-secondary italic drop-shadow-none">
