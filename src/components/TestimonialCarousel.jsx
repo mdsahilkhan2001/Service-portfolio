@@ -125,7 +125,7 @@ const TestimonialCarousel = ({ testimonials }) => {
                                     style={{ perspective: "1500px" }}
                                 >
                                     <div className={`
-                                        w-full bg-theme-bg-secondary/80 backdrop-blur-3xl p-8 md:p-12 rounded-[3rem] md:rounded-[4rem] 
+                                        w-full bg-theme-bg-secondary/80 backdrop-blur-3xl p-6 md:p-12 rounded-[2rem] md:rounded-[4rem] 
                                         border border-white/10 shadow-[0_40px_80px_-15px_rgba(0,0,0,0.6)] 
                                         relative group overflow-hidden transition-all duration-700
                                         ${isCenter ? 'ring-[4px] ring-primary/20 scale-100 opacity-100' : 'scale-90 grayscale-[40%] opacity-40'}
@@ -207,7 +207,7 @@ const TestimonialCarousel = ({ testimonials }) => {
             </div>
 
             {/* Dots */}
-            <div className="flex justify-center gap-6 mt-16 md:mt-24">
+            <div className="flex justify-center gap-6 mt-32 md:mt-24">
                 {testimonials.map((_, idx) => (
                     <button
                         key={idx}

@@ -12,7 +12,7 @@ const Navbar = ({ theme, toggleTheme }) => {
     const navLinks = [
         { title: 'Home', path: '/' },
         { title: 'Services', path: '/services' },
-        { title: 'Training', path: '/training' },
+        // { title: 'Training', path: '/training' },
         { title: 'Technology', path: '/technology' },
         { title: 'About Us', path: '/about' },
         { title: 'Portfolio', path: '/portfolio' },
@@ -25,7 +25,7 @@ const Navbar = ({ theme, toggleTheme }) => {
                 initial={{ y: -100, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.5, ease: "easeOut" }}
-                className="fixed top-8 left-0 right-0 z-50 flex justify-center px-4"
+                className="fixed top-8 left-0 right-0 z-[100] flex justify-center px-4"
             >
                 <div className="w-full max-w-7xl bg-[#0B1120]/90 backdrop-blur-md border border-white/10 rounded-full shadow-2xl px-6 h-16 flex items-center justify-between transition-all duration-300">
 
@@ -111,14 +111,14 @@ const Navbar = ({ theme, toggleTheme }) => {
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
                             onClick={() => setIsOpen(false)}
-                            className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 lg:hidden"
+                            className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[99] lg:hidden"
                         />
                         <motion.div
                             initial={{ x: '100%' }}
                             animate={{ x: 0 }}
                             exit={{ x: '100%' }}
                             transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                            className="fixed top-0 right-0 h-full w-80 bg-[#0B1120] border-l border-white/10 z-50 lg:hidden flex flex-col shadow-2xl"
+                            className="fixed top-0 right-0 h-full w-80 bg-[#0B1120] border-l border-white/10 z-[101] lg:hidden flex flex-col shadow-2xl"
                         >
                             <div className="p-6 border-b border-white/10 flex justify-between items-center">
                                 <span className="text-xl font-bold text-white">Menu</span>

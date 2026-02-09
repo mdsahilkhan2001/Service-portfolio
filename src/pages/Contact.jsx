@@ -17,7 +17,7 @@ const Contact = () => {
                                 <div className="w-14 h-14 bg-theme-bg-secondary flex items-center justify-center rounded-full text-primary shrink-0"><Mail /></div>
                                 <div>
                                     <h4 className="font-semibold mb-1 text-lg">Email</h4>
-                                    <p className="text-text-secondary">mdsahilkhan2001@gmail.com</p>
+                                    <a href="mailto:mdsahilkhan2001@gmail.com" className="text-text-secondary hover:text-primary transition-colors cursor-pointer">mdsahilkhan2001@gmail.com</a>
                                 </div>
                             </div>
                             <div className="flex gap-6 items-center">

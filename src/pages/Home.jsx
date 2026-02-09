@@ -325,78 +325,143 @@ const Home = () => {
                         {services.map((service, index) => (
                             <motion.div
                                 key={index}
-                                className="glass-glow bg-white dark:bg-slate-900/40 backdrop-blur-xl p-8 rounded-[2rem] shadow-xl border border-slate-200 dark:border-white/5 hover:border-primary/50 transition-all duration-500 group relative overflow-hidden flex flex-col items-start"
+                                className="glass-glow group relative p-8 rounded-[2.5rem] bg-gradient-to-br from-white/5 to-white/[0.02] dark:from-slate-900/50 dark:to-slate-900/20 backdrop-blur-2xl border border-white/10 dark:border-white/5 shadow-2xl transition-all duration-700 overflow-hidden flex flex-col items-start min-h-[380px]"
                                 variants={itemVariants}
                                 onMouseMove={handleMouseMove}
-                                whileHover={{ y: -10, scale: 1.02 }}
+                                whileHover={{ y: -15, scale: 1.02 }}
                             >
-                                <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-                                <div className="inline-flex p-4 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-2xl mb-6 text-primary shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300 border border-primary/20">
-                                    <service.icon size={28} />
+                                {/* Interactive Spotlight Glow (handled by index.css .glass-glow::before) */}
+
+                                {/* Decorative Background Number */}
+                                <span className="absolute top-4 right-8 text-8xl font-black text-white/[0.03] dark:text-white/[0.02] select-none pointer-events-none group-hover:text-primary/5 transition-colors duration-500">
+                                    {(index + 1).toString().padStart(2, '0')}
+                                </span>
+
+                                {/* Decorative Background Icon (Faint) */}
+                                <div className="absolute -bottom-10 -right-10 opacity-[0.03] dark:opacity-[0.02] transform -rotate-12 group-hover:rotate-0 group-hover:scale-125 transition-all duration-700 pointer-events-none">
+                                    <service.icon size={200} />
                                 </div>
-                                <h3 className="text-xl font-bold mb-3 text-text group-hover:text-primary transition-colors">{service.title}</h3>
-                                <p className="text-theme-text-secondary mb-8 leading-relaxed flex-grow">{service.desc}</p>
+
+                                {/* Icon Container - Classy & Glowing */}
+                                <div className="relative mb-8">
+                                    <div className="absolute inset-0 bg-primary/20 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                                    <div className="relative inline-flex p-5 bg-gradient-to-br from-white/10 to-transparent dark:from-white/5 backdrop-blur-xl rounded-2xl text-primary border border-white/20 dark:border-white/10 shadow-xl group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 group-hover:shadow-primary/20">
+                                        <service.icon size={32} strokeWidth={1.5} />
+                                    </div>
+                                </div>
+
+                                {/* Content */}
+                                <h3 className="text-2xl font-bold mb-4 text-text group-hover:text-primary transition-colors duration-300">
+                                    {service.title}
+                                </h3>
+                                <p className="text-lg text-theme-text-secondary mb-8 leading-relaxed flex-grow opacity-80 group-hover:opacity-100 transition-opacity">
+                                    {service.desc}
+                                </p>
+
+                                {/* Animated CTA Button */}
                                 <button
                                     onClick={() => setSelectedService(service)}
-                                    className="mt-auto inline-flex items-center gap-2 font-semibold text-primary text-sm overflow-hidden relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all after:duration-300 group-hover:after:w-full cursor-pointer hover:bg-transparent"
+                                    className="group/btn relative mt-auto flex items-center gap-3 px-6 py-3 rounded-xl bg-white/5 dark:bg-white/[0.02] border border-white/10 hover:border-primary/50 transition-all duration-500 overflow-hidden"
                                 >
-                                    Explore Tech <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                                    <div className="absolute inset-0 bg-primary/10 translate-y-full group-hover/btn:translate-y-0 transition-transform duration-500" />
+                                    <span className="relative z-10 font-bold text-sm tracking-wide group-hover/btn:text-primary transition-colors">EXPLORE TECH</span>
+                                    <ArrowRight size={18} className="relative z-10 group-hover/btn:translate-x-1.5 transition-transform duration-500 text-primary" />
                                 </button>
+
+                                {/* Bottom Glow Border */}
+                                <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-primary/50 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700" />
                             </motion.div>
                         ))}
                     </motion.div>
                 </div>
             </section>
 
-            {/* Tech Stack Section */}
-            <section className="py-32 bg-theme-bg-secondary/50 relative overflow-hidden">
-                {/* Background Pattern */}
-                <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, var(--color-text) 1px, transparent 0)', backgroundSize: '40px 40px' }}></div>
+            {/* Tech Stack Section - Revolutionized Design */}
+            <section className="py-32 relative overflow-hidden bg-theme-bg">
+                {/* Background Decorative Elements */}
+                <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+                <div className="absolute inset-0 bg-grid-white/[0.01] bg-[size:50px_50px]" />
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[600px] bg-primary/5 blur-[120px] rounded-full pointer-events-none -z-10" />
 
                 <div className="container mx-auto px-4 max-w-7xl relative z-10">
-                    <div className="text-center mb-16">
-                        <h2 className="text-4xl md:text-5xl font-extrabold mb-6 text-text">Technology <span className="text-primary">Stack</span></h2>
-                        <p className="text-xl text-theme-text-secondary max-w-3xl mx-auto">We leverage the latest robust frameworks and tools to build future-proof solutions.</p>
+                    <div className="text-center mb-20">
+                        <motion.span
+                            initial={{ opacity: 0, y: 10 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            className="text-primary font-bold tracking-[0.2em] uppercase text-xs mb-4 block"
+                        >
+                            Our Toolkit
+                        </motion.span>
+                        <h2 className="text-4xl md:text-6xl font-bold mb-6 text-text tracking-tight">
+                            Technology <span className="text-primary italic">Stack</span>
+                        </h2>
+                        <p className="text-lg md:text-xl text-theme-text-secondary max-w-3xl mx-auto opacity-80 leading-relaxed">
+                            We leverage a world-class technology stack to architect resilient, high-performance systems and future-proof solutions.
+                        </p>
                     </div>
 
-                    <div className="flex justify-center mb-16">
-                        <div className="bg-white/50 dark:bg-slate-800/50 backdrop-blur-md p-1.5 rounded-full border border-border inline-flex items-center gap-1 shadow-sm overflow-x-auto max-w-full">
+                    {/* Classy Glass Tab System */}
+                    <div className="flex justify-center mb-16 px-4 md:px-0">
+                        <div className="relative p-2 md:p-1.5 bg-white/5 dark:bg-white/[0.02] backdrop-blur-3xl border border-white/10 rounded-2xl grid grid-cols-2 md:flex items-center gap-2 md:gap-1 shadow-2xl w-full md:w-auto">
                             {Object.keys(techStack).map((tab) => (
                                 <button
                                     key={tab}
                                     onClick={() => setActiveTab(tab)}
-                                    className={`px-6 py-2.5 rounded-full text-base font-semibold transition-all duration-300 whitespace-nowrap ${activeTab === tab
-                                        ? 'bg-primary text-white shadow-md'
-                                        : 'text-theme-text-secondary hover:text-primary hover:bg-white/50'
+                                    className={`relative px-4 md:px-8 py-3 rounded-xl text-sm font-bold tracking-wide transition-all duration-500 whitespace-nowrap z-10 w-full md:w-auto ${activeTab === tab ? 'text-white' : 'text-theme-text-secondary hover:text-text'
                                         }`}
                                 >
-                                    {tab}
+                                    {activeTab === tab && (
+                                        <motion.div
+                                            layoutId="activeTab"
+                                            className="absolute inset-0 bg-primary rounded-xl shadow-[0_0_20px_rgba(var(--color-primary-rgb),0.5)]"
+                                            transition={{ type: "spring", bounce: 0.25, duration: 0.6 }}
+                                        />
+                                    )}
+                                    <span className="relative z-10">{tab}</span>
                                 </button>
                             ))}
                         </div>
                     </div>
 
+                    {/* Tech Cards Grid */}
                     <motion.div
                         key={activeTab}
-                        initial={{ opacity: 0, filter: 'blur(10px)', y: 20 }}
-                        animate={{ opacity: 1, filter: 'blur(0px)', y: 0 }}
-                        transition={{ duration: 0.5 }}
-                        className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 max-w-6xl mx-auto"
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                        className="grid grid-cols-2 min-[420px]:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 max-w-6xl mx-auto"
                     >
                         {techStack[activeTab].map((tech, index) => {
                             const Icon = techIcons[tech] || Code2;
                             return (
                                 <motion.div
-                                    key={index}
-                                    className="bg-theme-bg p-6 rounded-2xl border border-border flex flex-col items-center gap-4 transition-all duration-300 hover:border-primary/50 hover:shadow-glow hover:-translate-y-2 group relative"
-                                    initial={{ opacity: 0, scale: 0.9 }}
-                                    animate={{ opacity: 1, scale: 1 }}
+                                    key={tech}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    animate={{ opacity: 1, y: 0 }}
                                     transition={{ delay: index * 0.05 }}
+                                    whileHover={{ y: -12, scale: 1.05 }}
+                                    className="group relative flex flex-col items-center justify-center p-8 bg-white/5 dark:bg-white/[0.02] backdrop-blur-2xl border border-white/10 rounded-[2rem] shadow-2xl hover:border-primary/40 transition-all duration-500"
                                 >
-                                    <div className="text-theme-text-secondary transition-all duration-300 group-hover:text-primary group-hover:scale-110 group-hover:rotate-12">
-                                        <Icon size={42} />
+                                    {/* Decorative Motif */}
+                                    <div className="absolute top-0 left-0 w-full h-full opacity-[0.02] group-hover:opacity-[0.05] transition-opacity duration-500 pointer-events-none overflow-hidden flex items-center justify-center">
+                                        <Icon size={120} className="transform rotate-12" />
                                     </div>
-                                    <span className="font-semibold text-text text-sm md:text-base text-center group-hover:text-primary transition-colors">{tech}</span>
+
+                                    {/* Tech Icon */}
+                                    <div className="relative z-10 p-4 bg-white/5 rounded-2xl border border-white/10 mb-5 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 group-hover:shadow-[0_0_20px_rgba(var(--color-primary-rgb),0.2)]">
+                                        <Icon size={48} className="text-theme-text-secondary group-hover:text-primary transition-colors duration-500" />
+                                    </div>
+
+                                    {/* Tech Label */}
+                                    <span className="relative z-10 font-bold text-sm tracking-widest text-text/80 group-hover:text-text group-hover:tracking-[0.15em] transition-all duration-500 uppercase">
+                                        {tech}
+                                    </span>
+
+                                    {/* Spotlight Glow */}
+                                    <div className="absolute inset-0 bg-radial-gradient from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+
+                                    {/* Bottom Indicator */}
+                                    <div className="absolute bottom-4 w-12 h-1 bg-primary/20 rounded-full scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
                                 </motion.div>
                             );
                         })}
@@ -405,7 +470,7 @@ const Home = () => {
             </section>
 
             {/* Featured Trainings */}
-            <section className="py-32 bg-theme-bg relative">
+            {/* <section className="py-32 bg-theme-bg relative">
                 <div className="container mx-auto px-4 max-w-7xl">
                     <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
                         <div className="max-w-2xl">
@@ -455,7 +520,7 @@ const Home = () => {
                         </Link>
                     </div>
                 </div>
-            </section>
+            </section> */}
 
             {/* Why Choose Us */}
             <section className="py-32 bg-[#020617] text-white relative overflow-hidden">
